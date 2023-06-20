@@ -1,0 +1,805 @@
+$transition: all 0.3s ease 0s;
+
+// --colors--
+$colorBlack: #273238;
+$colorDarkGrey: #384250;
+$colorGray: #808a8f;
+$colorWhite: #fff;
+$colorExLightGray: #eaeaea;
+$colorLightGray: #949494;
+$ashGrey: #dcdfe3;
+$bg-color: #f5f5f5;
+$colorDanger: #e72127;
+$colorRed: #e92028;
+$colorDark: #000;
+$coloRed: #ff4b57;
+$colorLightRed: #fae4e7;
+$colorPurple: #644ed7;
+$colorApprove: #2fc736;
+$colorWait: #fca556;
+
+// --buttons--
+@mixin button {
+	background-color: transparent;
+	border: none;
+}
+
+@mixin feature-common-box {
+	border-radius: 30px;
+	min-height: 510px;
+	max-width: 100%;
+
+	@media (max-width: 1600px) {
+		min-height: 423px;
+	}
+
+	@media (max-width: 1440px) {
+		min-height: 380px;
+	}
+
+	@media (max-width: 1200px) {
+		min-height: 465px;
+	}
+
+	@media (max-width: 992px) {
+		min-height: 345px;
+	}
+
+	@media (max-width: 768px) {
+		min-height: 300px;
+	}
+	@media (max-width: 576px) {
+		padding: 25px;
+		min-height: 370px;
+	}
+}
+
+@mixin container-lg {
+	@media (min-width: 576px) {
+		max-width: 430px;
+	}
+	@media (min-width: 768px) {
+		max-width: 720px;
+	}
+	@media (min-width: 992px) {
+		max-width: 960px;
+	}
+	@media (min-width: 1200px) {
+		max-width: 1140px;
+	}
+	@media (min-width: 1440px) {
+		max-width: 1300px;
+	}
+	@media (min-width: 1600px) {
+		max-width: 1560px;
+	}
+
+	.feature-col {
+		margin-bottom: -250px;
+	}
+
+	.feature-common-box {
+		border-radius: 30px;
+		z-index: 999999999999;
+
+		h4 {
+			color: $colorWhite;
+			padding: 20px 10px;
+			font-weight: 800;
+
+			@media (max-width: 1440px) {
+				font-size: 20px;
+			}
+
+			@media (max-width: 1024px) {
+				padding: 10px 5px;
+			}
+
+			@media (max-width: 768px) {
+				font-size: 20px;
+			}
+			@media (max-width: 576px) {
+				font-size: 15px;
+			}
+		}
+
+		p {
+			color: $colorWhite;
+			font-size: 16px;
+			font-weight: 500;
+
+			@media (max-width: 1440px) {
+				font-size: 15px;
+			}
+
+			@media (max-width: 1024px) {
+				font-size: 14px;
+			}
+
+			@media (max-width: 768px) {
+				font-size: 14px;
+			}
+
+			@media (max-width: 576px) {
+				font-size: 12px;
+			}
+		}
+	}
+	.feature-light-box {
+		background-color: transparent;
+	}
+	.feature-dark-box {
+		background-color: transparent;
+	}
+	.feature-danger-box {
+		background-color: transparent;
+		position: relative;
+		z-index: 999999;
+	}
+}
+
+@mixin btn-common {
+	padding: 12px 28px;
+	display: inline-block;
+	position: relative;
+	font-weight: 500;
+	border: 1px solid transparent;
+	border-radius: 25px;
+	transition: $transition;
+	cursor: pointer;
+
+	&:hover {
+		color: $coloRed !important;
+		background-color: transparent;
+		border-color: $coloRed !important;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		border-color: $colorLightRed !important;
+	}
+
+	@media (max-width: 1240px) {
+		padding: 8px 16px;
+	}
+
+	@media (max-width: 992px) {
+		padding: 8px 26px;
+	}
+
+	@media (max-width: 768px) {
+		padding: 8px 24px;
+	}
+
+	@media (max-width: 576px) {
+		padding: 5px 22px;
+		font-size: 14px;
+	}
+}
+
+@mixin btn-bordered {
+	background-color: transparent;
+	border-color: $colorExLightGray;
+	color: $coloRed;
+
+	svg {
+		color: #000;
+	}
+}
+
+@mixin btn-red {
+	background-color: $coloRed;
+	color: #fff !important;
+}
+
+@mixin btn-black {
+	background-color: $colorBlack;
+	color: #fff;
+}
+
+@mixin btn-gray-border {
+	background-color: transparent;
+	border-color: $colorExLightGray;
+	color: $colorLightGray;
+}
+
+@mixin btn-lightred {
+	background-color: $colorLightRed;
+	color: $coloRed;
+}
+
+@mixin btn-darkGray {
+	background-color: $colorGray;
+	color: #fff;
+}
+
+@mixin btn-lightGray {
+	background-color: #f4f4f4;
+	color: $colorLightGray;
+}
+
+// container
+@mixin container {
+	@media (max-width: 992px) {
+		max-width: 100%;
+	}
+	@media (min-width: 1200px) {
+		max-width: 1340px;
+	}
+	@media (min-width: 1400px) {
+		max-width: 1340px;
+	}
+	@media (min-width: 1600px) {
+		max-width: 1540px;
+	}
+}
+
+// section
+@mixin section {
+	// padding: 70px 0px;
+
+	@media (max-width: 992px) {
+		padding: 60px 0px;
+	}
+
+	@media (max-width: 768px) {
+		padding: 50px 0px;
+	}
+
+	@media (max-width: 468px) {
+		padding: 40px 0px;
+	}
+}
+
+// sec header
+@mixin sec-header {
+	margin-bottom: 40px;
+
+	span {
+		color: $coloRed;
+		margin-bottom: 10px;
+		display: inline-block;
+		font-size: 16px;
+	}
+
+	.sec-title {
+		font-size: 32px;
+		font-weight: 600;
+	}
+
+	p {
+		margin-top: 15px;
+		font-weight: 400;
+	}
+
+	@media (max-width: 992px) {
+		.sec-title {
+			font-size: 30px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.sec-title {
+			font-size: 26px;
+		}
+
+		p {
+			margin-top: 10px;
+		}
+	}
+
+	@media (max-width: 576px) {
+		span {
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+
+		.sec-title {
+			font-size: 22px;
+		}
+
+		p {
+			font-size: 14px;
+			margin-top: 5px;
+		}
+	}
+}
+
+// title-lg
+@mixin title-lg {
+	font-size: 26px;
+	font-weight: 600;
+
+	@media (max-width: 1200px) {
+		font-size: 22px;
+	}
+
+	@media (max-width: 576px) {
+		font-size: 20px;
+	}
+}
+
+// title-md
+@mixin title-md {
+	font-size: 22px;
+	font-weight: 600;
+
+	@media (max-width: 576px) {
+		font-size: 18px;
+	}
+}
+
+// text-big
+@mixin text-big {
+	font-size: 18px;
+	font-weight: 600;
+
+	@media (max-width: 768px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 576px) {
+		font-size: 14px;
+	}
+}
+
+@mixin text-small {
+	font-size: 14px;
+	color: $colorLightGray;
+
+	@media (max-width: 576px) {
+		font-size: 12px;
+	}
+}
+
+@mixin text-xs {
+	font-size: 11px;
+
+	@media (max-width: 576px) {
+		font-size: 12px;
+	}
+}
+
+// dropdow menu design
+@mixin dropdown {
+	.dropdown-menu {
+		padding: 15px;
+		border: transparent;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		border-radius: 15px;
+		color: $colorLightGray;
+
+		.dropdown-item {
+			padding: 8px 0px;
+			color: $colorLightGray;
+
+			&:hover {
+				background-color: transparent;
+				color: $coloRed;
+			}
+		}
+	}
+
+	@media (max-width: 576px) {
+		.dropdown-menu {
+			.dropdown-item {
+				padding: 5px 0px;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+// toggel
+@mixin toggle {
+	.material-switch > input[type='checkbox'],
+	.material-switch > input[type='radio'] {
+		display: none;
+	}
+
+	.material-switch > label {
+		cursor: pointer;
+		height: 0px;
+		position: relative;
+		width: 40px;
+		margin-bottom: 4px;
+	}
+
+	.material-switch > label::before {
+		background: $colorLightGray;
+		border-radius: 8px;
+		border: 2px solid $colorLightGray;
+		content: '';
+		height: 13px;
+		margin-top: -8px;
+		position: absolute;
+		opacity: 0.3;
+		transition: all 0.4s ease-in-out;
+		width: 30px;
+	}
+
+	.material-switch > label::after {
+		background: #949494;
+		border-radius: 16px;
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+		content: '';
+		height: 18px;
+		width: 18px;
+		left: -4px;
+		margin-top: -7px;
+		position: absolute;
+		top: -4px;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.material-switch > input[type='checkbox']:checked + label::before,
+	.material-switch > input[type='radio']:checked + label::before {
+		background: $colorLightRed;
+		opacity: 0.5;
+		border: 2px solid transparent;
+	}
+
+	.material-switch > input[type='checkbox']:checked + label::after,
+	.material-switch > input[type='radio']:checked + label::after {
+		background: inherit;
+		left: 13px;
+		background-color: $coloRed;
+	}
+}
+
+// table
+@mixin theme-table {
+	border-collapse: separate;
+	border-spacing: 0 20px;
+
+	td {
+		border: transparent;
+		text-align: center;
+	}
+
+	thead {
+		th {
+			font-size: 14px;
+			border: unset;
+			text-align: center;
+		}
+	}
+
+	tbody {
+		tr {
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 20px;
+
+			td {
+				vertical-align: middle;
+				margin-bottom: 30px;
+				padding: 30px 15px;
+
+				.btn-common {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 992px) {
+		tbody {
+			tr {
+				td {
+					padding: 15px;
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 576px) {
+		td {
+			font-size: 14px;
+		}
+	}
+}
+
+@mixin drop-container {
+	display: flex;
+	align-items: center;
+
+	.dropzone {
+		width: 100%;
+		min-height: auto;
+		border: 2px dashed $colorLightGray;
+		background-color: #fbfbfb;
+		border-radius: 20px;
+		padding: 15px 10px;
+		cursor: pointer;
+
+		&:focus {
+			outline: none;
+		}
+
+		.dropzone-text,
+		.dropzone-text1 {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+
+			.dropzone-icon {
+				width: 45px;
+				height: 45px;
+				line-height: 45px;
+				background-color: $coloRed;
+				border-radius: 10px;
+				text-align: center;
+				margin-right: 15px;
+
+				svg {
+					color: #fff;
+				}
+			}
+
+			.dropzone-info {
+				p {
+					font-weight: 500;
+					color: $colorGray;
+				}
+
+				span {
+					color: $colorLightGray;
+					font-size: 14px;
+					font-weight: 500;
+				}
+			}
+		}
+
+		.dz-message {
+			margin: 0;
+			display: none;
+
+			.dz-button {
+				display: none;
+			}
+		}
+	}
+
+	.preview {
+		padding: 15px 10px;
+		border: 1px solid $colorExLightGray;
+		border-radius: 20px;
+		margin-left: 10px;
+		width: 100%;
+		position: relative;
+
+		.drop-close {
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			border-radius: 100%;
+			background-color: $coloRed;
+			position: absolute;
+			top: -10px;
+			right: 0;
+
+			svg {
+				color: #fff;
+				font-size: 14px;
+			}
+		}
+
+		.dz-preview {
+			display: flex;
+			align-items: center;
+
+			.dz-image {
+				margin-right: 10px;
+
+				img {
+					width: 40px;
+					height: 40px;
+					object-fit: contain;
+				}
+			}
+
+			.dz-success-mark {
+				display: none;
+			}
+
+			.dz-error-mark {
+				display: none;
+			}
+
+			.dz-remove {
+				display: none;
+			}
+
+			.dz-error-message {
+				display: none;
+			}
+
+			.dz-details {
+				display: block;
+				width: 100%;
+
+				.dz-size {
+					span {
+						color: $coloRed;
+						font-weight: 300 !important;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 576px) {
+		display: block;
+
+		// text-align: center;
+		.dropzone {
+			.dropzone-text,
+			.dropzone-text1 {
+				.dropzone-info {
+					p {
+						font-size: 14px;
+					}
+
+					span {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+
+		.preview {
+			margin-left: 0px;
+			margin-top: 20px;
+
+			.dz-preview {
+				.dz-details {
+					.dz-size {
+						span {
+							font-size: 12px;
+						}
+					}
+
+					.dz-filename {
+						span {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin theme-input {
+	label {
+		font-weight: 500;
+		font-size: 14px;
+
+		span {
+			color: $coloRed;
+		}
+	}
+
+	.form-control {
+		padding: 12px 15px;
+		background-color: #fbfbfb;
+		border: 1px solid $colorExLightGray;
+		border-radius: 25px;
+		position: relative;
+		box-sizing: border-box;
+
+		&:focus {
+			border-color: $coloRed;
+		}
+	}
+
+	@media (max-width: 576px) {
+		label {
+			font-size: 12px !important;
+		}
+
+		.form-control {
+			padding: 10px 15px !important;
+			font-size: 14px;
+		}
+	}
+}
+
+@mixin payment-pagination {
+	nav {
+		.pagination {
+			justify-content: center;
+
+			.page-item {
+				.page-link {
+					border: transparent;
+					background-color: transparent;
+					color: $coloRed;
+
+					&:focus {
+						box-shadow: none;
+					}
+
+					&:hover {
+						background-color: transparent;
+					}
+				}
+			}
+
+			.pg-inner-row {
+				background-color: $colorLightRed;
+				border-radius: 25px;
+
+				.pg-inner {
+					background-color: $colorLightRed;
+					display: contents;
+					overflow: hidden;
+
+					ul {
+						display: flex;
+						align-items: center;
+
+						.page-item {
+							.page-link {
+								width: 40px;
+								height: 40px;
+								border-radius: 100%;
+								background-color: transparent;
+								padding: 0;
+								text-align: center;
+								line-height: 40px;
+
+								&.active {
+									background-color: $coloRed;
+									color: #fff;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 576px) {
+		nav {
+			.pagination {
+				display: flex;
+				text-align: center;
+
+				.page-item {
+					.page-link {
+						font-size: 14px;
+					}
+				}
+
+				.pg-inner-row {
+					.pg-inner {
+						ul {
+							display: inline-flex;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin entry-dropdown {
+	display: flex;
+	align-items: center;
+
+	.dropdown {
+		margin: 0px 10px;
+		padding: 10px 26px;
+	}
+
+	@media (max-width: 576px) {
+		span {
+			font-size: 14px;
+		}
+	}
+}
